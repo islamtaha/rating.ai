@@ -1,1 +1,1 @@
-"# rating.ai" 
+# rating.ai
