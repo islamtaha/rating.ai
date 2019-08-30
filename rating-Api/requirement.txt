@@ -1,0 +1,7 @@
+flask
+flask_restful
+sqlalchemy
+tensorflow
+tensorflow_hub
+keras
+tweepy

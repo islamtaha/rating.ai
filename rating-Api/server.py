@@ -10,8 +10,9 @@ from twitter_search import TwitterSearch
 app = Flask(__name__)
 api = Api(app)
 
-api.add_resource(TwitterSearch, '/twitter/<search_keyword>') # Route_3
+api.add_resource(TwitterSearch, '/twitter/<search_keyword>/<count>') # Route_3
 
 if __name__ == '__main__':
-     app.run(port='5002')
+    TwitterSearch.start()
+    app.run(port='5002')
      
