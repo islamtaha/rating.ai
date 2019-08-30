@@ -18,6 +18,7 @@ class TwitterSearch(Resource):
 
     @classmethod
     def start(cls):
+        # start 
         TwitterSearch.model = load_model('best_model.hdf5')
         TwitterSearch.graph = tf.get_default_graph()
         TwitterSearch.tokenizer = TwitterSearch.tokenizer_full_text('full_text')
