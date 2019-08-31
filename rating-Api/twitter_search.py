@@ -24,7 +24,6 @@ class TwitterSearch(Resource):
         TwitterSearch.tokenizer = TwitterSearch.tokenizer_full_text('full_text')
         TwitterSearch.twitter_auth_data = TwitterSearch.read_twitter_config('config.json')
 
-
     @classmethod
     def read_full_text(cls, filename):
         with open (filename, 'rb') as fp:
@@ -44,27 +43,28 @@ class TwitterSearch(Resource):
             return data
 
     def get(self, search_keyword, count):
-        print("here")
-        print(TwitterSearch.twitter_auth_data['consumer_key'])
-        print(TwitterSearch.model)
-        print("end")
         count = int(count)
         auth = tweepy.OAuthHandler(TwitterSearch.twitter_auth_data['consumer_key'], TwitterSearch.twitter_auth_data['consumer_secret'])
         auth.set_access_token(TwitterSearch.twitter_auth_data['access_token'], TwitterSearch.twitter_auth_data['access_token_secret'])
         api = tweepy.API(auth)
         result = []
-        for tweet in tweepy.Cursor(api.search, q=search_keyword).items(count):
-            result.append(tweet.text)
+        full_tweets = []
+        for tweet in tweepy.Cursor(api.search, q=search_keyword, lang='en', tweet_mode='extended').items(count):
+            result.append(tweet.full_text)
+            full_tweets.append(tweet._json)
         result_tokenized = TwitterSearch.tokenizer.texts_to_sequences(result)
         max_len = 50
         pad_result = pad_sequences(result_tokenized, maxlen = max_len)
-        #return jsonify(pad_result.tolist())
         global graph
         with TwitterSearch.graph.as_default():
             pred = TwitterSearch.model.predict(pad_result)
-        predictions = np.round(np.argmax(pred, axis=1)).astype(int)
-        predictions = predictions.tolist()
+        if len(pred) == 0:
+            predictions = []
+        else:
+            predictions = np.round(np.argmax(pred, axis=1)).astype(int)
+            predictions = predictions.tolist()
         return_result = []
-        for i in range(len(result)):
-            return_result.append((result[i], predictions[i]))
+        for i in range(len(full_tweets)):
+            return_result.append((full_tweets[i], predictions[i]))
+        #print(return_result)
         return jsonify(return_result)

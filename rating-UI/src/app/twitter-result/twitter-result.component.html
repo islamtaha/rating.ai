@@ -1,0 +1,31 @@
+<hr>
+<div *ngIf="tweets.length == 0">
+    <p> No Results Found </p>
+</div>
+<div *ngFor="let tweet of tweets">
+    <div class="row">
+        <div class="col-sm-1">
+            <img class="tweet-img" src="{{tweet.userProfileImageUrl}}">
+        </div>
+        <div class="col-sm-9">
+            <a href="http://www.twitter.com/{{tweet.userSreenName}}"><span class="tweet-user-name"> {{tweet.userName}}</span></a>
+            <div><span class="tweet-user-screen-name">@{{tweet.userSreenName}}</span></div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <p class="tweet-full-text">
+            {{tweet.tweetText}}
+        </p>
+    </div>
+    <div class="row">
+        <div>
+            <span class="tweet-rating"> Review is {{outputRatingAsText[tweet.rating]}}</span>
+        </div>
+    </div>
+    <div class="row">
+            <div>
+                <span class="tweet-rating"> Expected Rating is {{tweet.rating}}</span>
+            </div>
+        </div>
+    <hr>
+</div>

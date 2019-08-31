@@ -5,3 +5,4 @@ tensorflow
 tensorflow_hub
 keras
 tweepy
+flask_cors
