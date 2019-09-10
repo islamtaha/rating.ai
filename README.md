@@ -4,7 +4,7 @@ rating.ai is project Sentiment analysis and ratings for a product from facebook 
 
 
 # Usage
-----
+
 1. go to https://islamtaha.github.io/rating.ai/
 2. enter the search keyword and count(the number of tweets returned)
 3. click search
@@ -12,9 +12,11 @@ rating.ai is project Sentiment analysis and ratings for a product from facebook 
 **Deployment**
 ----
 * **Backend**
+	
 	backend is deployed on heroku link to application: https://rating-api.herokuapp.com/
 
 * **Frontend**
+	
 	frontend is deployed on github link link to application: https://islamtaha.github.io/rating.ai/
 
 
@@ -62,6 +64,6 @@ rating.ai is project Sentiment analysis and ratings for a product from facebook 
   	```
 
 # To-do List
-----
+
 - [ ] increase twitter model accuracy and make the result based on the search keyword context
 - [ ] implement facebook Api and model
