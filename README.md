@@ -13,11 +13,15 @@ rating.ai is project Sentiment analysis and ratings for a product from facebook 
 ----
 * **Backend**
 	
-	backend is deployed on heroku link to application: https://rating-api.herokuapp.com/
+	backend is deployed on heroku 
+
+	link to application: https://rating-api.herokuapp.com/
 
 * **Frontend**
 	
-	frontend is deployed on github link link to application: https://islamtaha.github.io/rating.ai/
+	frontend is deployed on github 
+
+	link to application: https://islamtaha.github.io/rating.ai/
 
 
 **Rest Api Endpoints**
