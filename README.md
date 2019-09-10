@@ -2,25 +2,20 @@
 
 rating.ai is project Sentiment analysis and ratings for a product from facebook group posts and twitter tweets to gain Intuition what the users feedback on the product based on facebook group posts and help to know more about negative feedback.
 
-### To-do List
-----
-- [ ] increase twitter model accuracy and make the result based on the search keyword context
-- [ ] implement facebook Api and model
 
-
-### Usage
+# Usage
 ----
-	1. go to https://islamtaha.github.io/rating.ai/
-	2. enter the search keyword and count(the number of tweets returned)
-	3. click search
+1. go to https://islamtaha.github.io/rating.ai/
+2. enter the search keyword and count(the number of tweets returned)
+3. click search
 
 **Deployment**
 ----
-	* **Backend**
-		backend is deployed on heroku link to application: https://rating-api.herokuapp.com/
+* **Backend**
+	backend is deployed on heroku link to application: https://rating-api.herokuapp.com/
 
-	* **Frontend**
-		frontend is deployed on github link link to application: https://islamtaha.github.io/rating.ai/
+* **Frontend**
+	frontend is deployed on github link link to application: https://islamtaha.github.io/rating.ai/
 
 
 **Rest Api Endpoints**
@@ -65,3 +60,8 @@ rating.ai is project Sentiment analysis and ratings for a product from facebook 
       	}
     	});
   	```
+
+# To-do List
+----
+- [ ] increase twitter model accuracy and make the result based on the search keyword context
+- [ ] implement facebook Api and model
