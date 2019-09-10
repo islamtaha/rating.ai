@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request
 from flask_restful import Resource, Api
 from sqlalchemy import create_engine
@@ -16,6 +17,5 @@ api = Api(app)
 api.add_resource(TwitterSearch, '/twitter/<search_keyword>/<count>') # Route_3
 
 if __name__ == '__main__':
-    TwitterSearch.start()
-    app.run(port='5002')
-     
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)

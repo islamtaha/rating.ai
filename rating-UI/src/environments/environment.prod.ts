@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://rating.backend.ai.github.io/'
+  baseUrl: 'https://rating-api.herokuapp.com/'
 };

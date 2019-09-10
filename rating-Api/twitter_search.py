@@ -84,6 +84,8 @@ class TwitterSearch(Resource):
         return tweets_padded
 
     def get(self, search_keyword, count):
+        if TwitterSearch.tweeter_api is None:
+            TwitterSearch.start()
         count = int(count)
         result = []
         full_tweets = []
